@@ -24,7 +24,7 @@ Gap-Graph是一款辅助基因组组装的可视化软件，该软件提供了�
 
 [samtools](https://github.com/samtools/samtools) >= 1.20
 
-![figure1](./image/1.png)  
+![figure1](./images/1.png)  
 
 1、  想要正常使用补gap功能，黄色按钮是必须要上传的文件：
 
@@ -66,13 +66,13 @@ samtools view HiC.filtered.bam | awk '($7 != "=" && $3 != $7 )' | cut -f1,3,7 |a
 
  
 
-![figure2](./image/2.png)  
+![figure2](./images/2.png)  
 
 
 
 3、 上传.gfa文件后，会自动可视化组装图，如下图：
 
-![figure3](./image/3.png)  
+![figure3](./images/3.png)  
 
  
 
@@ -80,13 +80,13 @@ samtools view HiC.filtered.bam | awk '($7 != "=" && $3 != $7 )' | cut -f1,3,7 |a
 
  
 
-![figure4](./image/4.png)  
+![figure4](./images/4.png)  
 
 
 
 5、 .paf文件上传后，“All gaps info”卡片会展示chromosome assembly中所有的gap信息，如下图：
 
-![figure5](./image/5.png)  
+![figure5](./images/5.png)  
 
  
 
@@ -94,43 +94,43 @@ samtools view HiC.filtered.bam | awk '($7 != "=" && $3 != $7 )' | cut -f1,3,7 |a
 
 注意：图中显示出来的gap数量可能会少于“All gaps info”卡片中展示的gap数量
 
-![figure6](./image/6.png)  
+![figure6](./images/6.png)  
 
 
 
 7、 鼠标放到节点上，会显示节点的标签，标签的第一个字段是utg的ID，第二个字段是utg的长度，第三个字段是该utg在当前染色体中的位置，如下图：
 
-![figure7](./image/7.png)  
+![figure7](./images/7.png)  
 
  
 
 8、 .gaf文件上传后，点击“show path”按钮会显示每条路径的深度，如下图：
 
-![figure8](./image/8.png)  
+![figure8](./images/8.png)  
 
 
 
 9、 .gaf文件上传后，鼠标右击节点，点击“show cover degree”按钮会显示其他节点（紫色）与当前节点（黄色）的覆盖度，其他节点颜色越深表示覆盖度越深，如下图：
 
-![figure9](./image/9.png)  
+![figure9](./images/9.png)  
 
  
 
 10、      Hi-C（.txt）文件上传后，鼠标右击节点，点击“show Hi-C”按钮会显示其他节点（蓝色）与当前节点（黄色）的Hi-C信号量，其他节点颜色越深表示信号越强，如下图：
 
-![figure10](./image/10.png)  
+![figure10](./images/10.png)  
 
 
 
 11、      当选择一条染色体后，点击染色体中的某个节点，界面右侧会显示与该节点相关的边信息以及比对信息，如下图：
 
-![figure11](./image/11.png)  
+![figure11](./images/11.png)  
 
  
 
 12、      界面右上角的输入框，可以输入你想查询的节点（若查询多个节点，节点之间用逗号分隔），点击查询按钮，节点会高亮显示在图中，如下图：
 
-![figure12](./image/12.png)  
+![figure12](./images/12.png)  
 
 
 
@@ -175,7 +175,7 @@ Users can download and install Gap-Graph through the following link. Simply doub
 
 [samtools](https://github.com/samtools/samtools) >= 1.20
 
-![figure1](./image/1.png)  
+![figure1](./images/1.png)  
 
  
 
@@ -219,25 +219,25 @@ filter_bam HiC.bam 1 --nm 3 --threads 14 | samtools view - -b -@ 14 -o HiC.filte
 samtools view HiC.filtered.bam | awk '($7 != "=" && $3 != $7 )' | cut -f1,3,7 |awk '{if($1 != seq){seq=$1;print $0;}}'| awk '{if($2>$3){temp=$2;$2=$3;$3=temp}print $2"\t"$3}' | sort | uniq -c | awk '{print $2","$3","$1}' > hic.txt
 ```
 
-![figure2](./image/2.png)  
+![figure2](./images/2.png)  
 
  
 
-3、 After uploading the .gfa file, the assembly graph will be automatically visualized, as shown in the image below:
+3、 After uploading the .gfa file, the assembly graph will be automatically visualized, as shown in the images below:
 
-![figure3](./image/3.png)  
+![figure3](./images/3.png)  
 
  
 
 4、After uploading the .paf file, the software will automatically align the chromosome assembly to the assembly graph. You can then select the chromosome ID to view each chromosome. If some chromosomes are not successfully mounted or are unsatisfactory, you can manually enable the optimization algorithm. After selecting one or more chromosomes you wish to optimize, re-upload the .paf file to optimize the chromosome mounting.
 
-![figure4](./image/4.png)  
+![figure4](./images/4.png)  
 
  
 
-5、After uploading the .paf file, the "All gaps info" card will display all the gap information in the chromosome assembly, as shown in the image below:
+5、After uploading the .paf file, the "All gaps info" card will display all the gap information in the chromosome assembly, as shown in the images below:
 
-![figure5](./image/5.png)  
+![figure5](./images/5.png)  
 
  
 
@@ -245,42 +245,42 @@ samtools view HiC.filtered.bam | awk '($7 != "=" && $3 != $7 )' | cut -f1,3,7 |a
 
 Note: The number of gaps displayed on the graph may be fewer than the number of gaps shown in the "All gaps info" card.
 
-![figure6](./image/6.png)  
+![figure6](./images/6.png)  
 
  
 
-7、 When you hover the mouse over a node, the node's label will be displayed. The first field of the label is the utg ID, the second field is the length of the utg, and the third field is the position of the utg on the current chromosome, as shown in the image below:
+7、 When you hover the mouse over a node, the node's label will be displayed. The first field of the label is the utg ID, the second field is the length of the utg, and the third field is the position of the utg on the current chromosome, as shown in the images below:
 
-![figure7](./image/7.png)  
-
- 
-
-8、After uploading the .gaf file, click the "show path" button to display the depth of each path, as shown in the image below:
-
-![figure8](./image/8.png)  
-
-
-
-9、After upoading the .gaf file, right-click on a node and click the "show cover degree" button to display the coverage degree of other nodes (purple) relative to the current node (yellow). The darker the color of the other nodes, the higher the coverage degree, as shown in the image below:
-
-![figure9](./image/9.png)  
-
-
-
-10、 After uploading the Hi-C (.txt) file, right-click on a node and click the "show Hi-C" button to display the Hi-C signal strength between other nodes (blue) and the current node (yellow). The darker the color of the other nodes, the stronger the signal, as shown in the image below:
-
-![figure10](./image/10.png)  
-
-
-11、 After selecting a chromosome, click on a node within the chromosome, and the edge information and alignment details related to that node will be displayed on the right side of the interface, as shown in the image below:
-
-![figure11](./image/11.png)  
+![figure7](./images/7.png)  
 
  
 
-12、 The input box in the top-right corner of the interface allows you to enter the nodes you want to search for (if searching for multiple nodes, separate them with commas). After clicking the search button, the nodes will be highlighted in the graph, as shown in the image below:
+8、After uploading the .gaf file, click the "show path" button to display the depth of each path, as shown in the images below:
 
-![figure12](./image/12.png)  
+![figure8](./images/8.png)  
+
+
+
+9、After upoading the .gaf file, right-click on a node and click the "show cover degree" button to display the coverage degree of other nodes (purple) relative to the current node (yellow). The darker the color of the other nodes, the higher the coverage degree, as shown in the images below:
+
+![figure9](./images/9.png)  
+
+
+
+10、 After uploading the Hi-C (.txt) file, right-click on a node and click the "show Hi-C" button to display the Hi-C signal strength between other nodes (blue) and the current node (yellow). The darker the color of the other nodes, the stronger the signal, as shown in the images below:
+
+![figure10](./images/10.png)  
+
+
+11、 After selecting a chromosome, click on a node within the chromosome, and the edge information and alignment details related to that node will be displayed on the right side of the interface, as shown in the images below:
+
+![figure11](./images/11.png)  
+
+ 
+
+12、 The input box in the top-right corner of the interface allows you to enter the nodes you want to search for (if searching for multiple nodes, separate them with commas). After clicking the search button, the nodes will be highlighted in the graph, as shown in the images below:
+
+![figure12](./images/12.png)  
 
 
 
