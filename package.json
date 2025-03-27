@@ -1,0 +1,75 @@
+{
+  "name": "Gap-Graph",
+  "version": "1.0.2",
+  "description": "简单实用的补gap工具",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "nodemon --max-old-space-size=6144 --watch main.js --exec electron .",
+    "electron:build": "electron-builder"
+  },
+  "build": {
+    "asar": true,
+    "productName": "Gap-Graph",
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true
+    },
+    "files": [
+      "dist/**/*",
+      "src/**/*",
+      "main.js",
+      "preload/**/*",
+      "package.json",
+      "!**/*.map"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@sigma/node-border": "^3.0.0",
+    "cytoscape": "^3.26.0",
+    "cytoscape-euler": "^1.2.2",
+    "cytoscape-klay": "^3.1.4",
+    "cytoscape-spread": "^3.0.0",
+    "electron-log": "^5.2.4",
+    "element-plus": "^2.7.3",
+    "graphology": "^0.25.4",
+    "graphology-components": "^1.5.4",
+    "graphology-layout": "^0.6.1",
+    "graphology-layout-forceatlas2": "^0.10.1",
+    "ogdfjs": "^0.1.18",
+    "pako": "^2.1.0",
+    "sigma": "^3.0.0-alpha3",
+    "vis-network": "^9.1.8",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4",
+    "workerpool": "^9.1.0",
+    "zlib-browserify": "^0.0.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.13.3",
+    "vite": "^4.4.9"
+  }
+}
